@@ -46,7 +46,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 30px;
             }
 
             .links > a {
@@ -79,16 +79,27 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
-                    66666
-                </div>
+                    <!-- @if ($data['score']<60)
+                        不及格
+                    @else
+                        及格
+                    @endif -->
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                   <!--  @unless($data['score']>=60)
+                        不及格
+                    @endunless -->
+
+                    <!-- @for ($i=0;$i<=$data['num'];$i++)
+                        {{$i}}<br>
+                    @endfor -->
+
+
+                    @foreach ($data['list'] as $key=>$vo)
+                        @if ($key>=2)
+                        {{$vo}}<br>
+                        @endif
+                    @endforeach
+
                 </div>
             </div>
         </div>
